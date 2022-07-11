@@ -1,0 +1,23 @@
+{
+  "name": "bac-specialities",
+  "version": "1.0.0",
+  "description": "a web application dedicated to algeia students who passes the bac exams",
+  "main": "index.js",
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./src/style.css -o ./dist/output.css --watch",
+    "build": "npx tailwindcss -o ./dist/output.css --minify; cp src/* ./dist; cp assets ./dist -r"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabildroid/bac-specialities.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nabildroid/bac-specialities/issues"
+  },
+  "homepage": "https://github.com/nabildroid/bac-specialities#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.1.5"
+  }
+}
