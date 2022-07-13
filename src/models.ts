@@ -20,10 +20,10 @@ export interface Speciality extends SpecialityDimension {
   likes?: number;
 }
 
-export interface IProvider {
+export interface IAppProvider {
   allOptions: Option[];
   selectedOptions: Option[];
-  setSelectedOptions(options: Option[]): void;
+  toggleOption(type: string, name: string): void;
 
   degree: number;
   setDegree(degree: number): void;

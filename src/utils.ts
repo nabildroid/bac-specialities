@@ -18,3 +18,7 @@ export function OptionName(option: Option) {
 export function OptionType(option: Option) {
   return option.path.split("/")[0];
 }
+
+export function cn(...classes: (string | boolean)[]) {
+  return classes.filter(Boolean).join(" ");
+}
