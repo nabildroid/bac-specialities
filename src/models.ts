@@ -28,12 +28,15 @@ export interface IAppProvider {
   degree: number;
   setDegree(degree: number): void;
 
-  like(id: string): Promise<void>;
+  like(speciality: Speciality): Promise<void>;
 
   suggested: Speciality[];
   suggest(): void;
-
-  openSpeciality(id: string): Promise<void>;
-
+  
+  openSpeciality(speciality: Speciality): Promise<void>;
+  
   page: "details" | "specialites" | "filters";
+  
+  selelctedSpeciality?: Speciality;
+  recommended: Speciality[];
 }

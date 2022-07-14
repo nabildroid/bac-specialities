@@ -29,6 +29,8 @@ const AppProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
 
   const [recommended, setRecommended] = useState<Speciality[]>([]);
 
+  const [selelctedSpeciality, setSelelctedSpeciality] = useState<Speciality>();
+
   const page = useMemo(() => {
     if (recommended.length) return "details";
     if (suggested.length) return "specialites";
@@ -49,7 +51,7 @@ const AppProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     }
   }
 
-  async function like(id: string) {
+  async function like(speciality: Speciality) {
     //todo implmenet this!
   }
 
@@ -58,9 +60,17 @@ const AppProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
       setSuggested(specialities);
     }
   }
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setSelectedOptions(allOptions);
+    setSuggested(specialities);
+  }, []);
 
-  async function openSpeciality(id: string) {}
+  async function openSpeciality(speciality: Speciality) {
+    // todo scroll to top
+    setSelelctedSpeciality(speciality);
+
+    setRecommended(specialities);
+  }
 
   const values = {
     like,
@@ -73,6 +83,8 @@ const AppProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     degree,
     setDegree,
     page: page as any,
+    selelctedSpeciality,
+    recommended,
   };
 
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;
